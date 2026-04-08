@@ -15,91 +15,124 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl bg-sage/5 border border-sage/10 p-10 text-center">
-        <p className="font-serif text-[22px] text-text-primary">
-          Thank you for reaching out.
+      <div className="bg-surface-container-lowest p-12 rounded-xl text-center">
+        <span className="material-symbols-outlined text-5xl text-secondary mb-4">
+          check_circle
+        </span>
+        <p className="text-2xl font-serif text-primary mb-2">
+          Thank you for your interest.
         </p>
-        <p className="mt-3 text-[16px] text-text-secondary">
-          We&apos;ll be in touch shortly to schedule your conversation.
+        <p className="text-on-surface-variant">
+          We&apos;ll be in touch shortly to schedule your consultation.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="name" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Name</label>
+          <label
+            htmlFor="name"
+            className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+          >
+            Name
+          </label>
           <input
             id="name"
             type="text"
             name="name"
             required
-            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors"
             placeholder="Your name"
           />
         </div>
         <div>
-          <label htmlFor="title" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Title</label>
+          <label
+            htmlFor="title"
+            className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+          >
+            Title
+          </label>
           <input
             id="title"
             type="text"
             name="title"
-            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors"
             placeholder="Your title"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="facility" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Facility</label>
+        <label
+          htmlFor="facility"
+          className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+        >
+          Facility Name
+        </label>
         <input
           id="facility"
           type="text"
           name="facility"
           required
-          className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+          className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors"
           placeholder="Facility name"
         />
       </div>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="phone" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Phone</label>
+          <label
+            htmlFor="phone"
+            className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+          >
+            Phone
+          </label>
           <input
             id="phone"
             type="tel"
             name="phone"
-            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors"
             placeholder="(555) 555-5555"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Email</label>
+          <label
+            htmlFor="email"
+            className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+          >
+            Email
+          </label>
           <input
             id="email"
             type="email"
             name="email"
             required
-            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors"
             placeholder="you@facility.com"
           />
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Message</label>
+        <label
+          htmlFor="message"
+          className="block text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-2"
+        >
+          Message
+        </label>
         <textarea
           id="message"
           name="message"
-          rows={3}
-          className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors resize-none"
-          placeholder="Tell us about your community..."
+          rows={4}
+          className="w-full bg-surface-container-lowest border-b-2 border-outline-variant/20 px-4 py-3 text-primary rounded-t focus:border-secondary focus:outline-none transition-colors resize-none"
+          placeholder="Tell us about your community and what you're looking for..."
         />
       </div>
       <button
         type="submit"
-        className="mt-2 self-start rounded-full bg-sage px-8 py-4 text-[15px] font-semibold text-white tracking-wide transition-all hover:bg-sage-light active:scale-[0.98]"
+        className="btn-primary-gradient text-on-primary px-10 py-4 rounded-lg font-bold tracking-wide shadow-lg hover:shadow-xl transition-all active:opacity-70"
       >
-        Send Message
+        Submit Inquiry
       </button>
     </form>
   );

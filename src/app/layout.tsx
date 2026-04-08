@@ -1,28 +1,27 @@
 import type { Metadata } from "next";
-import { DM_Sans, Lora } from "next/font/google";
+import { Noto_Serif, Manrope } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const lora = Lora({
-  variable: "--font-lora",
+const notoSerif = Noto_Serif({
+  variable: "--font-noto-serif",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
-  title: "Embedded Care — In-House Care for Senior Communities | Nurses & Company",
+  title: "Embedded Care | Nurses & Company",
   description:
-    "Place a dedicated, trained care team inside your senior community at zero cost. In-house personal care operated by Nurses & Company. St. Louis — since 1992.",
+    "In-house care for your residents. Zero cost to your facility. Nurses & Company places a dedicated care team inside your senior community. St. Louis — since 1992.",
   openGraph: {
-    title: "Embedded Care — Nurses & Company",
-    description:
-      "In-house care for your residents. Zero cost to your facility.",
+    title: "Embedded Care | Nurses & Company",
+    description: "In-house care for your residents. Zero cost to your facility.",
     locale: "en_US",
     type: "website",
   },
@@ -34,11 +33,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
-        <meta name="theme-color" content="#4a6741" />
+        <meta name="theme-color" content="#04122e" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className={`${dmSans.variable} ${lora.variable} font-sans antialiased`}>
+      <body
+        className={`${notoSerif.variable} ${manrope.variable} font-body bg-background text-on-surface antialiased`}
+      >
         {children}
       </body>
     </html>
