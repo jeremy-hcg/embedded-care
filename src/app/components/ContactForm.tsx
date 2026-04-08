@@ -15,67 +15,91 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-gold/35 bg-gradient-to-br from-[#fff8ee] to-[#fff3e0] p-8 text-center">
-        <p className="text-[18px] font-medium text-navy">
-          Thank you for your interest.
+      <div className="rounded-2xl bg-sage/5 border border-sage/10 p-10 text-center">
+        <p className="font-serif text-[22px] text-text-primary">
+          Thank you for reaching out.
         </p>
-        <p className="mt-2 text-[15px] font-light text-text-mid">
-          We&apos;ll be in touch shortly to schedule your introductory meeting.
+        <p className="mt-3 text-[16px] text-text-secondary">
+          We&apos;ll be in touch shortly to schedule your conversation.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Name</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            required
+            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            placeholder="Your name"
+          />
+        </div>
+        <div>
+          <label htmlFor="title" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Title</label>
+          <input
+            id="title"
+            type="text"
+            name="title"
+            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            placeholder="Your title"
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="facility" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Facility</label>
         <input
+          id="facility"
           type="text"
-          name="name"
-          placeholder="Your Name"
+          name="facility"
           required
-          className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-        />
-        <input
-          type="text"
-          name="title"
-          placeholder="Your Title"
-          className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+          className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+          placeholder="Facility name"
         />
       </div>
-      <input
-        type="text"
-        name="facility"
-        placeholder="Facility Name"
-        required
-        className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-      />
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone"
-          className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          required
-          className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold"
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="phone" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Phone</label>
+          <input
+            id="phone"
+            type="tel"
+            name="phone"
+            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            placeholder="(555) 555-5555"
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            required
+            className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors"
+            placeholder="you@facility.com"
+          />
+        </div>
+      </div>
+      <div>
+        <label htmlFor="message" className="block text-[13px] font-medium text-text-tertiary mb-2 tracking-wide uppercase">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows={3}
+          className="w-full border-b-2 border-border-light bg-transparent px-0 py-3 text-[16px] text-text-primary placeholder:text-text-tertiary/60 focus:border-sage focus:outline-none transition-colors resize-none"
+          placeholder="Tell us about your community..."
         />
       </div>
-      <textarea
-        name="message"
-        placeholder="Tell us about your community and what you're looking for..."
-        rows={4}
-        className="rounded-[10px] border border-border bg-card px-4 py-3.5 text-[14px] font-light text-text-dark placeholder:text-text-light focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold resize-none"
-      />
       <button
         type="submit"
-        className="flex items-center justify-center gap-2 rounded-[10px] bg-gold px-6 py-4 text-[15px] font-bold tracking-wide text-navy transition-all hover:bg-gold-light"
+        className="mt-2 self-start rounded-full bg-sage px-8 py-4 text-[15px] font-semibold text-white tracking-wide transition-all hover:bg-sage-light active:scale-[0.98]"
       >
-        Schedule a Meeting
+        Send Message
       </button>
     </form>
   );

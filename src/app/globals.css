@@ -1,35 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --navy-deep: #1a2744;
-  --navy: #1e2d4a;
-  --gold: #c9a227;
-  --gold-light: #d4b23a;
-  --gold-dim: #fdf8ec;
-  --text-dark: #1e2d4a;
-  --text-mid: #4a5568;
-  --text-light: #8b95a5;
-  --border: #e8e8e8;
-  --card: #ffffff;
-  --background: #fafaf9;
+  --sage: #4a6741;
+  --sage-light: #5c7d52;
+  --sage-muted: #7a9a70;
+  --cream: #faf8f4;
+  --cream-dark: #f2efe8;
+  --warm-white: #fdfcfa;
+  --gold-accent: #c4a35a;
+  --gold-soft: #d4bc7e;
+  --text-primary: #2c2c2c;
+  --text-secondary: #5a5a5a;
+  --text-tertiary: #8a8a8a;
+  --border-light: #e8e4dc;
+  --border-subtle: #f0ece4;
 }
 
 @theme inline {
-  --color-navy-deep: var(--navy-deep);
-  --color-navy: var(--navy);
-  --color-gold: var(--gold);
-  --color-gold-light: var(--gold-light);
-  --color-gold-dim: var(--gold-dim);
-  --color-text-dark: var(--text-dark);
-  --color-text-mid: var(--text-mid);
-  --color-text-light: var(--text-light);
-  --color-border: var(--border);
-  --color-card: var(--card);
-  --font-sans: var(--font-outfit);
-  --font-serif: var(--font-playfair);
+  --color-sage: var(--sage);
+  --color-sage-light: var(--sage-light);
+  --color-sage-muted: var(--sage-muted);
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-warm-white: var(--warm-white);
+  --color-gold-accent: var(--gold-accent);
+  --color-gold-soft: var(--gold-soft);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-border-light: var(--border-light);
+  --color-border-subtle: var(--border-subtle);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-lora);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--text-dark);
+  background: var(--cream);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Fade-in on scroll animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
+.fade-up-delay-1 { animation-delay: 0.1s; }
+.fade-up-delay-2 { animation-delay: 0.2s; }
+.fade-up-delay-3 { animation-delay: 0.3s; }
